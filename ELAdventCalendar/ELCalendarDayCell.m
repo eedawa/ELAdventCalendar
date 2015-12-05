@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *dayButton;
 @property (weak, nonatomic) IBOutlet UIView *circleView;
 @property (weak, nonatomic) IBOutlet UILabel *numberLabel;
+@property (strong, nonatomic) ELCalendarDay *day;
 
 @end
 
@@ -25,21 +26,28 @@
     [self.dayButton setImage:[UIImage imageNamed:@"Tree"] forState:UIControlStateNormal];
     
     //Circle View
-    self.circleView.layer.cornerRadius = CGRectGetWidth(self.circleView.frame)/2;
+    self.circleView.layer.cornerRadius = CGRectGetWidth(self.circleView.bounds)/2;
     self.circleView.clipsToBounds = YES;
+}
+
+- (void)prepareForReuse{
+    
+    [super prepareForReuse];
     
     //Number Label
     self.numberLabel.text = nil;
 }
 
-- (void)setupCell{
+- (void)setupCellWithDay:(ELCalendarDay *)day{
     
-    self.numberLabel.text = self.day.number;
+    self.numberLabel.text = day.number;
+    
+    self.day = day;
 }
 
 - (IBAction)didPressDayButton:(id)sender {
     
-    if(self.day.isAvailable == NO){
+    if(!self.day.isAvailable){
         return;
     }
     

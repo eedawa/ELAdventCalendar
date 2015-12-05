@@ -67,10 +67,9 @@ ELCalendarDayCellDelegate
     ELCalendarDayCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier
                                                                                           forIndexPath:indexPath];
     
-    cell.day = day;
     cell.delegate = self;
     
-    [cell setupCell];
+    [cell setupCellWithDay:day];
     
     return cell;
 }

@@ -20,8 +20,7 @@
 @interface ELCalendarDayCell : UICollectionViewCell
 
 @property(nonatomic,weak) id<ELCalendarDayCellDelegate> delegate;
-@property ELCalendarDay *day;
 
-- (void)setupCell;
+- (void)setupCellWithDay:(ELCalendarDay*)day;
 
 @end
