@@ -46,7 +46,7 @@
 - (void)setup{
     
     //Circle View
-    self.circleView.layer.cornerRadius = CGRectGetWidth(self.circleView.frame)/2;
+    self.circleView.layer.cornerRadius = CGRectGetWidth(self.circleView.bounds)/2;
     self.circleView.clipsToBounds = YES;
     
     self.numberLabel.text = self.day.number;

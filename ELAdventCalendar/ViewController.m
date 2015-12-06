@@ -37,9 +37,6 @@ ELCalendarDayCellDelegate
 - (void)viewDidLoad{
     [super viewDidLoad];
     
-    //self.dayArr= [NSMutableArray new];
-    
-    //FAKE DATA
     self.calendarArr = [ELCalendarDataSource calendarArr];
     
 }
